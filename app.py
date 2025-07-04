@@ -91,10 +91,10 @@ elif menu == "Heart Disease Prediction":
 elif menu == "Parkinson’s Prediction":
     st.title("Parkinson’s Disease Prediction using ML")
     with st.form("parkinson_form"):
-        mdvp_fo = st.number_input("MDVP (Hz)", value=0.0)
-        mdvp_fhi = st.number_input("MDVP (Hz)", value=0.0)
-        mdvp_flo = st.number_input("MDVP (%)", value=0.0)
-        mdvp_jitter = st.number_input("MDVP (Abs)", value=0.0)
+        mdvp_fo = st.number_input("MDVP Fo (Hz)", value=0.0)
+        mdvp_fhi = st.number_input("MDVP Fhi (Hz)", value=0.0)
+        mdvp_flo = st.number_input("MDVP Flo (%)", value=0.0)
+        mdvp_jitter = st.number_input("MDVP Jitter (Abs)", value=0.0)
         shimmer = st.number_input("Shimmer", value=0.0)
         hnr = st.number_input("HNR", value=0.0)
         rpde = st.number_input("RPDE", value=0.0)
@@ -109,6 +109,5 @@ elif menu == "Parkinson’s Prediction":
         if submit:
             user_input = [mdvp_fo, mdvp_fhi, mdvp_flo, mdvp_jitter,
                           shimmer, hnr, rpde, dfa, spread1, spread2, d2, ppe]
-            prediction = train_and_predict(
-                user_input, "status", parkinsons_data)
+            prediction = train_and_predict(user_input, "status", parkinsons_data)
             st.write(prediction)
