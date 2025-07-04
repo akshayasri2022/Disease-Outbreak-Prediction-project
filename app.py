@@ -110,4 +110,4 @@ elif menu == "Parkinson’s Prediction":
             user_input = [mdvp_fo, mdvp_fhi, mdvp_flo, mdvp_jitter,
                           shimmer, hnr, rpde, dfa, spread1, spread2, d2, ppe]
             prediction = train_and_predict(user_input, "status", parkinsons_data)
-            st.write("Prediction:", "Yes, you have the disease." if prediction == 1 else "No, you do not have the disease.")
+            st.write(prediction)
